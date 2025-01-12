@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Limit maximum width for larger screens */
+}
+
+h1 {
+  font-size: 2rem; /* Smaller font size for mobile */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Use fractional units for responsiveness */
+  gap: 10px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 300px; /* Limit board size for mobile */
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1; /* Ensure cells are square */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.cell img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.status {
+  font-size: 1.2rem; /* Smaller font size for mobile */
+  margin: 20px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.winner-display {
+  display: none; /* Hidden by default */
+  text-align: center;
+}
+
+.winner-image {
+  width: 80px; /* Smaller image for mobile */
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.winner-message {
+  font-size: 1.5rem; /* Smaller font size for mobile */
+  margin-bottom: 20px;
+}
+
+.reset-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.reset-btn:hover {
+  background: #ff4a3d;
+  transform: scale(1.05);
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Even smaller font size for very small screens */
+  }
+
+  .board {
+    max-width: 90%; /* Allow the board to take more space on small screens */
+    gap: 5px; /* Reduce gap between cells */
+  }
+
+  .cell {
+    border-width: 1px; /* Thinner border for small screens */
+  }
+
+  .winner-image {
+    width: 60px; /* Smaller image for very small screens */
+    height: 60px;
+  }
+
+  .winner-message {
+    font-size: 1.2rem; /* Smaller font size for very small screens */
+  }
+}
